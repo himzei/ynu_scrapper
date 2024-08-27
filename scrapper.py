@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def search_incruit(keyword, page):
+def search_incruit(keyword, page=1):
     
     jobs = []
     
@@ -36,7 +36,7 @@ def search_incruit(keyword, page):
     return jobs
 
 
-def search_jobkorea(keyword, page):
+def search_jobkorea(keyword, page=1):
     
     jobs = []
     

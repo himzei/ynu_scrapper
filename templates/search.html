@@ -7,5 +7,30 @@
 </head>
 <body>
     <h1>검색결과가 나오는 페이지</h1>
+    <h4>키워드 "{{ keyword }}"로 {{ counts }} 개가 검색되었습니다.</h4>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>공고제목</th>
+                <th>회사</th>
+                <th>지역</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, job in jobs %}
+            <tr>
+                <td>{{ index + 1 }}</td>
+                <td>{{ job["title"] }}</td>
+                <td>{{ job["company"] }}</td>
+                <td>{{ job["location"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+      
+
 </body>
 </html>

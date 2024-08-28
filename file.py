@@ -1,8 +1,7 @@
 import csv 
 
-
 def save_to_csv(jobs):
-    with open("./to_save.csv", "w") as file:
+    with open("./to_save.csv", "w", newline="") as file:
         csv_writer = csv.writer(file)
 
         csv_writer.writerow(
@@ -17,3 +16,4 @@ def save_to_csv(jobs):
                 job["location"], 
                 job["link"]
                     ])
+            

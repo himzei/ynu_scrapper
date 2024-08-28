@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PicoCSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
-    <h1>검색결과가 나오는 페이지</h1>
-    <h4>키워드 "{{ keyword }}"로 {{ counts }} 개가 검색되었습니다.</h4>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>공고제목</th>
-                <th>회사</th>
-                <th>지역</th>
-            </tr>
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <h1>검색결과가 나오는 페이지</h1>
+      <h4>키워드 "{{ keyword }}"로 {{ counts }} 개가 검색되었습니다.</h4>
+
+      <table class="striped">
+        <thead data-theme="dark">
+          <tr>
+            <th>No</th>
+            <th>공고제목</th>
+            <th>회사</th>
+            <th>지역</th>
+          </tr>
         </thead>
         <tbody>
-            {% for index, job in jobs %}
-            <tr>
-                <td>{{ index + 1 }}</td>
-                <td>{{ job["title"] }}</td>
-                <td>{{ job["company"] }}</td>
-                <td>{{ job["location"] }}</td>
-            </tr>
-            {% endfor %}
+          {% for index, job in jobs %}
+          <tr>
+            <td>{{ index + 1 }}</td>
+            <td>{{ job["title"] }}</td>
+            <td>{{ job["company"] }}</td>
+            <td>{{ job["location"] }}</td>
+          </tr>
+          {% endfor %}
         </tbody>
-    </table>
-    
-      
-
-</body>
+      </table>
+    </main>
+    <footer></footer>
+  </body>
 </html>
